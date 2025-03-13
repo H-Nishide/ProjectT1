@@ -1,0 +1,21 @@
+TOMOARCH解説 ForkとGithubの使い方を初心者なりに整理してみる
+https://tomoarch.com/2020/05/19/fork_github_how_to/
+
+★ProjectT1のCloneを作った。名前は、「ProjectT1.Clone」場所は、C:\D\2.Prj\にしで工房\Git\ProjectT1.Clone
+
+PrjT1.txtのつづき
+
+Git入門.txt
+PrjT1.txt
+README.md
+がダウンロードされた
+CloneのリポジトリoriginをoriginCloneに改名
+
+本来の手順としては、GitHubに新規リポジトリを作成
+Cloneを作成することでローカルPCにローカルリポジトリを作成
+あれこれ作業して結果をコミット。となるのだろう。
+
+ここまでで、commit
+18:38
+
+

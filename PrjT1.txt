@@ -18,3 +18,7 @@ https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3
 ForkとGithubの使い方を初心者なりに整理してみる
 https://tomoarch.com/2020/05/19/fork_github_how_to/
 
+★ProjectT1のCloneを作った。場所は、C:\D\2.Prj\にしで工房\Git\ProjectT1.Clone
+
+how2Fok.txtへつづく
+
