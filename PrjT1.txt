@@ -1,1 +1,6 @@
 forkの操作練習をかねて
+
+1)commit して push　するまで
+https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3
+リポジトリを選択
+左側の「Local Changes」内の変更ファイル一覧から、stageしたいものを選択して、「Stage」を押す
