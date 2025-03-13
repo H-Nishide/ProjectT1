@@ -13,3 +13,8 @@ https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3
 
 間違えてコミットしたので元に戻したい時
 ツリーの戻したい箇所の上で右クリックして「Reset ‘main’ to Here…」で戻る
+
+＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+ForkとGithubの使い方を初心者なりに整理してみる
+https://tomoarch.com/2020/05/19/fork_github_how_to/
+
