@@ -4,3 +4,12 @@ forkの操作練習をかねて
 https://qiita.com/AyakoKataoka/items/e1b0a2a2b2c85de4c1e3
 リポジトリを選択
 左側の「Local Changes」内の変更ファイル一覧から、stageしたいものを選択して、「Stage」を押す
+「Staged」にファイルが追加された状態で、
+コミットログ（差分の下のCommit subjectとDescription）を書いて、
+右下の「Commit XX file」というボタンを押す。
+
+ブランチのツリーを確認したい時は、左側の自分が操作中のブランチ名をクリックする。
+ツリー表示のすぐ上にある、「Push」ボタンをクリックすればpushできる。
+
+間違えてコミットしたので元に戻したい時
+ツリーの戻したい箇所の上で右クリックして「Reset ‘main’ to Here…」で戻る
