@@ -217,4 +217,6 @@ remote:
 To https://github.com/ユーザー名/リポジトリ名.git
  * [new branch]      third-branch -> third-branch
 Branch 'third-branch' set up to track remote branch 'third-branch' from 'origin'.
+★
+Forkでsecond-branchをリモートに登録した。
 
