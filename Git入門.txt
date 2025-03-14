@@ -134,3 +134,87 @@ git commitは、コミットを作成する、すなわち、リポジトリの�
 ■リバートは「新しいコミットを作る」、
 ■マージは「両方の過去のコミットをすべて取り込む」という性質を持つことを十分理解して使用しましょう。
 
+■最低限しておくといいgitconfigの設定■■■■■■■■■■■■■■■■■■■■■■■■■■
+https://qiita.com/hayamofu/items/d8103e789196bcd8b489
+git config --global user.name "{ユーザー名}"
+git config --global user.email "{メールアドレス}"
+ユーザー名とメールアドレスは、Githubのusernameとmailaddressとそろえるといい。
+
+git config --global core.ignorecase false	falseにすると、ファイルの大文字・小文字を区別して認識する。
+
+git config --global core.quotepath false
+falseにすると、git statusで変更ファイル一覧を表示するときに、
+日本語のファイル名が文字化けしないでちゃんと表示される。
+
+git config --global core.safecrlf true
+trueにすると、改行コードが混在している場合は変換しないというオプション。
+
+git config --global core.autocrlf false
+falseにすると、コミット・チェックアウト時に改行コードの変換を行わない。
+
+git config --global core.editor 'C:\Program Files\Hidemaru\Hidemaru.exe' //cu8
+現設定はVSCode、core.editor="C:\Users\AA004551\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
+コミットするときにメッセージを編集する際に使用するエディタの設定。
+
+git config --global push.default simple
+simpleに設定しておくと安全。
+カレントブランチと同名のリモートブランチが存在する場合のみ、カレントブランチのpushが行われる。
+
+git config --global credential.helper wincred
+Githubからソースを取得するのに、ユーザー名とパスワードを聞かれるが、
+頻度が結構多いのでキャッシュしておく設定。★4月GA復帰後に設定予定
+
+
+■Git初期設定■■■■■■■■■■■■■■■■■■■■■■■■■■
+https://qiita.com/ucan-lab/items/aadbedcacbc2ac86a2b3
+
+■入門　GitHubの使い方　■■■■■■■■■■■■■■■■■■■■■■■■■■
+https://www.kagoya.jp/howto/it-glossary/develop/howtousegithub/
+【リポジトリ作成の段取り】
+１）4.リモートリポジトリを作成する
+リモートリポジトリを作成します。
+GitHub管理画面で、「Create Repository」ボタンをクリック
+
+２）5.ローカルリポジトリを作成する
+Git Bashで、以下コマンドを順番に実行します。リポジトリ名は任意です。
+
+※ここでは「sample」という名前のローカルリポジトリを作成します。
+mkdir github
+cd github
+mkdir sample
+cd sample
+git init　これでsampleディレクトリがローカルリポジトリになります。
+ローカルリポジトリの作成が完了すると、以下のように表示されます。
+＞Initialized empty Git repository in C:/Users/ディレクトリ名/github/sample/.git/
+
+
+■gitコマンドを使ったブランチ作成からマージまでの流れ（GitHub Desktopとの比較あり）■■■■■■■■■■■■■■■■■■■■■■■■■■
+https://qiita.com/yamaday0u/items/487c304ac63b693f4dfa
+
+git branch
+git branchは作成済みのブランチを一覧表示します。
+現在選択されているbranchは先頭に'*'が付いています。
+
+新しいブランチを作成します。
+git branch second-branch master //masterブランチからsecond-branchを作成
+git branch second-branch main //mainブランチからsecond-branchを作成 これはローカルの話
+
+git checkout ブランチ名
+ブランチを切り替えることができます。
+
+
+ブランチをリモートに登録する
+git push -u origin <作成したブランチ名>
+ 作成したブランチをリモートリポジトリに登録します。
+ GitHub Desktopでいうpublish branchですね。
+
+git push -u origin third-branch
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'third-branch' on GitHub by visiting:
+remote:      https://github.com/ユーザー名/リポジトリ名/pull/new/third-branch
+remote: 
+To https://github.com/ユーザー名/リポジトリ名.git
+ * [new branch]      third-branch -> third-branch
+Branch 'third-branch' set up to track remote branch 'third-branch' from 'origin'.
+
