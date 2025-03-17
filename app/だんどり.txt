@@ -1,0 +1,37 @@
+★2025.0317 ProjectT1.step3
+■2024.11.1 Step3にて信恵さんリリース
+	renewTRUSTcontract.T2.exe
+	countTRUSTcontract.T1.exe
+
+2024.1001 更新ファイル提供時のフィードバックでリクエスト受理
+
+１）現行のフォーマットで更新期日、販社で分割
+２）集計用データを新規につくる
+　　新しい、SQLでゲットする
+　　販社＞子会社＞製品＞製番だけのリストが欲しいです。
+
+Step2までのリストアップは、顧客のアカウントユーザを列挙するため、1台に複数の人がレコード化される
+Excelの重複削除で絞り込む方法が一つある（A)
+もうひとつは、back_userへのJOINを外して、Product数にしてしまうやりかた（B)
+　FROM句の/*アカウントを外す  RIGHT JOIN back_user u ON c.customer_id = u.customer_id	*/
+　WHERE句の/* AND u.IsActive AND u.contract = 1 */
+
+ところが、AとBの結果件数が合わなかった、A<Bになった。
+
+AはすべてBに含まれており、Bで増えてる不一致データは
+customer_idに紐づくback_userが居ないか、u.IsActive AND u.contract = 1を満たさない。
+
+状態が正しいなら、契約あっても担当者不明な会社が存在し、更新対象に上がらない。
+customerに紐づくuserが正しく設定されれば、辻褄は合うので是正願う。
+というか、契約情報の入力がバグってる、ってことでしょ？
+
+■契約終了日付
+正解は、back_maintenance_contract
+back_maintenance_contract.ContractStartDate
+back_maintenance_contract.ContractExpirationDate
+
+back_delivery_product.TRUSTIsOn =1 TRUST契約終了  0に落とすのは更新しない確認を受けた信恵さん
+※契約情報に基づき、back_userがログインできる期間として運用されている
+back_delivery_product.TrustStartDate　＝d.ContractStartDate
+back_delivery_product.TrustEndDate ＝＞d.ContractExpirationDate＋1か月 失効までの執行猶予として1か月
+
