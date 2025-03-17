@@ -220,3 +220,15 @@ Branch 'third-branch' set up to track remote branch 'third-branch' from 'origin'
 ★
 Forkでsecond-branchをリモートに登録した。
 
+リモートへpush byFork　実際に実行されたgitコマンド　＠＠はじまり
+$ git push originClone refs/heads/second-branch --verbose
+
+Enumerating objects: 5, done.
+Delta compression using up to 12 threads
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+POST git-receive-pack (559 bytes)
+Pushing to https://github.com/H-Nishide/ProjectT1
+To https://github.com/H-Nishide/ProjectT1
+   eb844a9..ac2f059  second-branch -> second-branch
+updating local tracking ref 'refs/remotes/originClone/second-branch'
+＠＠ここまで
