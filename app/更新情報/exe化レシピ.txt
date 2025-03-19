@@ -1,18 +1,19 @@
-python -m venv T2
-T2\Scripts\activate
+python -m venv T3
+T3\Scripts\activate
 
 python.exe -m pip install --upgrade pip
-# .\T2\Scripts\python.exe -m pip install -U pip
+# .\T3\Scripts\python.exe -m pip install -U pip
 # pip install -U pip
 
 pip install pyinstaller
 ＃pip installは、スペースで並べて複数実行できる。
-pip install Tk openpyxl pandas mysql.connector
-pip install datetime
-pyinstaller renewTRUSTcontract.T2.py --onefile
+pip install Tk openpyxl pandas sqlalchemy pymysql datetime
+pip install 
+pyinstaller renewTRUSTcontract.T3.py  --clean -F --onefile
 
 deactivate
 
+pip install mysql.connector
 
 ####################################################
 ＃requirements.txtに記載したライブラリをまとめてインストール

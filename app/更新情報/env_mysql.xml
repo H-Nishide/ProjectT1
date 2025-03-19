@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<env_mysql revision="1.0" update="2024-11-19">
+  <db target="stag" host="gajp-trust-dev-mysql-v801.mysql.database.azure.com" user="localadmin" password="Screen@202410" />
+  <db target="prod" host="gajp-trust-dev-mysql-st001.mysql.database.azure.com" user="localadmin" password="Screen@20240508" />
+</env_mysql>
