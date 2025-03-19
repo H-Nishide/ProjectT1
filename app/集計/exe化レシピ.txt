@@ -1,20 +1,21 @@
-python -m venv T1
-T1\Scripts\activate
+python -m venv T2
+T2\Scripts\activate
 
 python.exe -m pip install --upgrade pip
-#.\T2\Scripts\python.exe -m pip install -U pip
-
-pip install -U pip
+# .\T2\Scripts\python.exe -m pip install -U pip
+# pip install -U pip
 
 pip install pyinstaller
 ＃pip installは、スペースで並べて複数実行できる。
-pip install Tk openpyxl pandas mysql.connector
-
-pyinstaller countTRUSTcontract.T1.py --onefile
+pip install Tk openpyxl pandas sqlalchemy pymysql
+pip install datetime
+pyinstaller countTRUSTcontract.T2.py --clean -F --onefile
 
 deactivate
 
-
+＃プログラム中では、import pymysqlは、未使用表示になるのだが、
+exeにして実行すると、pymysqlがModuleNotFoundErrorとなるため、
+pip installしたら動いた。念の為、プログラムでもimportしとく
 ####################################################
 ＃requirements.txtに記載したライブラリをまとめてインストール
 pip install -r requirements.txt
@@ -22,4 +23,18 @@ pip install -r requirements.txt
 >>Tk
 >>openpyxl
 >>pandas
+importでエラー　urllib　 quote_plus　なくても出来た
 
+Pyinstallerでexe化するときのファイルの参照方法（複数ファイルの同梱）
+https://egaoyo.com/pyinstaller-onefile
+pyinstallerのオプションでは以下を使っています。
+
+-onefile:ファイルを一つにまとめる。
+-noconsole:実行時にコンソールを表示させない
+-add-data:参照するファイルを実行ファイルに同梱する。同じ階層のファイルなら
+-add-data “sample.csv;.” など
+-exclude:不要なライブラリなどを指定して同梱の対象外とする
+-clean:前回exe化した際に作成されたファイルを削除してからexe化する
+
+プログラム複数ファイル化するときの注意なんか
+https://chayarokurokuro.hatenablog.com/entry/2021/01/11/160928#%E3%81%BE%E3%81%9A%E3%81%AF%E5%9F%BA%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%BA%96%E5%82%99%E3%81%99%E3%82%8B

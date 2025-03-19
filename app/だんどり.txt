@@ -1,7 +1,20 @@
-★2025.0317 ProjectT1.step3
-■2024.11.1 Step3にて信恵さんリリース
-	renewTRUSTcontract.T2.exe
-	countTRUSTcontract.T1.exe
+■Step4■2024.11.01～
+＝②＝
+DB接続パラメータの外出し。env_mysql.xml
+アドレスなど変更時にプログラムを更新しなくて済むように。今後の他のツールでも共用する。
+fenv_mysql.pyを共有モジュールとして使う。xmlの存在、パースチェックも入れた。
+
+＝①＝
+Pandasでmysql.connectorを使ったMySQLアクセスは、未サポート。というワーニングが出ている。
+正攻法としては、sqlalchemyを使うべし。ということでこの対応を今後行う。
+
+さらに、パスワードに＠があるときは、URLエンコードしないといけない、という対応で
+  from urllib.parse import quote_plus
+
+  password='Screen@202410'
+  # パスワードをURLエンコード p@ssword -> p%40ssword
+  password = quote_plus(password)
+とする必要がある。
 
 2024.1001 更新ファイル提供時のフィードバックでリクエスト受理
 
